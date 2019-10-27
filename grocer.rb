@@ -97,7 +97,7 @@ def apply_clearance(cart)
   cart.each do |item|
     #check if item is on clearance
     if cart[item][:clearance] == true
-      cart[item][:price] = (cart[item][:price] * .20)
+      cart[item][:price] = (cart[item][:price] - cart[item][:price] * .20)
     end
   end
   cart
