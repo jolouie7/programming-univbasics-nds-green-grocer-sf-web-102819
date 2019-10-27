@@ -50,45 +50,45 @@ def consolidate_cart(cart)
   cart
 end
 
-def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+# def apply_coupons(cart, coupons)
+#   # Consult README for inputs and outputs
+#   #
+#   # REMEMBER: This method **should** update cart
   
-  #check coupons to see if :item in coupon is in cart
-  #check to see if cart :item has the same :count or more of coupon count
-    #if the above is passes, get coupon :price / :count
-  # binding.pry
-  i = 0 
-  while i < coupons.length do 
-    hash_ele_coupon = coupons[i]
-    item_coupon = hash_ele_coupon[:item]
-    count_coupon = hash_ele_coupon[:num]
-    j = 0
-    while j < cart.length do 
-      hash_ele_cart = cart[i]
-      item_cart = hash_ele_cart[:item]
-      count_cart = hash_ele_cart[:count]
-      if item_coupon == item_cart
-        if count_cart >= count_coupon
-          new_coupon_hash = {}
-          discount_price = hash_ele_coupon[:cost] / count_coupon
-          new_coupon_hash[:item] = "#{item_cart} W/COUPON"
-          new_coupon_hash[:price] = discount_price
-          new_coupon_hash[:clearance] = true
-          new_coupon_hash[:count] = count_coupon
+#   #check coupons to see if :item in coupon is in cart
+#   #check to see if cart :item has the same :count or more of coupon count
+#     #if the above is passes, get coupon :price / :count
+#   # binding.pry
+#   i = 0 
+#   while i < coupons.length do 
+#     hash_ele_coupon = coupons[i]
+#     item_coupon = hash_ele_coupon[:item]
+#     count_coupon = hash_ele_coupon[:num]
+#     j = 0
+#     while j < cart.length do 
+#       hash_ele_cart = cart[i]
+#       item_cart = hash_ele_cart[:item]
+#       count_cart = hash_ele_cart[:count]
+#       if item_coupon == item_cart
+#         if count_cart >= count_coupon
+#           new_coupon_hash = {}
+#           discount_price = hash_ele_coupon[:cost] / count_coupon
+#           new_coupon_hash[:item] = "#{item_cart} W/COUPON"
+#           new_coupon_hash[:price] = discount_price
+#           new_coupon_hash[:clearance] = true
+#           new_coupon_hash[:count] = count_coupon
           
-          count_cart = count_cart - count_coupon #=> 3 - 2 = 1
-          #update cart
-          cart << new_coupon_hash
-        end 
-      end 
-      j += 1
-    end 
-    i += 1
-  end
-  cart
-end
+#           count_cart = count_cart - count_coupon #=> 3 - 2 = 1
+#           #update cart
+#           cart << new_coupon_hash
+#         end 
+#       end 
+#       j += 1
+#     end 
+#     i += 1
+#   end
+#   cart
+# end
 
 def apply_clearance(cart)
   # Consult README for inputs and outputs
