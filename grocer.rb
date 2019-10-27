@@ -1,4 +1,4 @@
-# require "pry"
+require "pry"
 def find_item_by_name_in_collection(name, collection)
   # Implement me first!
   #
@@ -94,7 +94,7 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  
+  binding.pry
   cart.each do |item|
     #check if item is on clearance
     if item[:clearance] == true
